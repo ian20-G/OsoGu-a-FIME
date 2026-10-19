@@ -617,8 +617,144 @@ main {
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(-6px); }
 
-@media (min-width: 720px) {
-  .quick { grid-template-columns: repeat(4, 1fr); }
+/* ============================================================
+ *  ADAPTACIÓN ESPECÍFICA PARA ESCRITORIO (PC / LAPTOP)
+ * ============================================================ */
+@media (min-width: 900px) {
+  /* Ancho más espacioso y cómodo en PC */
+  main {
+    max-width: 1140px;
+    padding: 1.8rem 2rem 3.5rem;
+  }
+
+  /* Quitar padding inferior exclusivo de móvil */
+  body {
+    padding-bottom: 2rem;
+  }
+
+  /* Barra superior más espaciosa */
+  .topbar {
+    padding: .85rem 2rem;
+  }
+  .brand strong {
+    font-size: 1.2rem;
+  }
+
+  /* Barra de navegación: En PC pasa de barra inferior móvil a menú superior flotante */
+  .tabbar {
+    position: sticky;
+    top: 57px;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    z-index: 24;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 52px;
+    padding: 0 1.5rem;
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: none;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  }
+  .tabbar a {
+    flex-direction: row;
+    gap: 8px;
+    font-size: .92rem;
+    padding: .45rem 1.15rem;
+    border-radius: 999px;
+    transition: all .18s ease;
+  }
+  .tabbar a:hover {
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+    color: var(--primary);
+    transform: translateY(-1px);
+  }
+  .tabbar a[aria-current="page"] {
+    background: var(--primary);
+    color: var(--primary-ink);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 30%, transparent);
+  }
+  .tabbar a[aria-current="page"] .tabbar-icon {
+    color: var(--primary-ink);
+    transform: none;
+  }
+
+  /* Layout de 2 columnas en PC para aprovechar pantallas anchas */
+  .desktop-split-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 1rem;
+  }
+  .desktop-col-side {
+    position: sticky;
+    top: 125px;
+  }
+
+  /* Vista Mapa en PC: Más amplio y cómodo para visualizar */
+  #view-mapa .desktop-split-layout {
+    grid-template-columns: 1.25fr 0.75fr;
+  }
+  .map-wrap {
+    height: 580px;
+    border-radius: 16px;
+  }
+
+  /* Directorio de contactos en cuadrícula de 2 o 3 columnas */
+  #contactos-lista .group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.1rem;
+  }
+  #contactos-lista .group h2 {
+    grid-column: 1 / -1;
+  }
+
+  /* Tarjetas de acceso rápido en inicio */
+  .quick {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .quick-item {
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .quick-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    border-color: var(--primary);
+  }
+
+  /* Bloques de horario: 3 columnas simétricas en PC */
+  .schedule-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Guías en escritorio: pestañas envolventes y tarjetas con hover */
+  .guide-tabs {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+  .guide-tab-btn {
+    transition: all .15s ease;
+  }
+  .guide-tab-btn:hover:not(.active) {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .guide-card {
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .guide-card:hover {
+    border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

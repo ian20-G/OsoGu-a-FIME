@@ -86,72 +86,79 @@
         </a>
       </div>
 
-      <div class="section-header-row">
-        <h2>Calendario Oficial FIME (Ago - Dic 2026)</h2>
+      <!-- Layout responsivo de 2 columnas para escritorio -->
+      <div class="desktop-split-layout">
+        <div class="desktop-col-main">
+          <div class="section-header-row">
+            <h2>Calendario Oficial FIME (Ago - Dic 2026)</h2>
+          </div>
+          <p class="muted">Fechas aprobadas por la Comisión Académica de FIME UANL. Filtra por mes:</p>
+          
+          <!-- Filtros por mes para móvil -->
+          <nav class="month-tabs" aria-label="Filtro de fechas por mes">
+            <button type="button" class="month-tab-btn active" data-mes="todos">Todos</button>
+            <button type="button" class="month-tab-btn" data-mes="8">Agosto</button>
+            <button type="button" class="month-tab-btn" data-mes="9">Septiembre</button>
+            <button type="button" class="month-tab-btn" data-mes="10">Octubre</button>
+            <button type="button" class="month-tab-btn" data-mes="11">Noviembre</button>
+            <button type="button" class="month-tab-btn" data-mes="12">Diciembre</button>
+          </nav>
+
+          <ul class="dates" id="fechas"></ul>
+        </div>
+
+        <div class="desktop-col-side">
+          <!-- LISTA DE PENDIENTES / TAREAS PERSONALIZABLE -->
+          <div class="section-header-row">
+            <h2>Tu Lista de Tareas y Pendientes</h2>
+          </div>
+          <p class="muted">Personaliza tu propia lista: agrega, edita o elimina tareas según tu semestre. Todo se guarda automáticamente.</p>
+
+          <!-- Panel de control de la lista -->
+          <article class="card task-manager-card">
+            <!-- Formulario para agregar nueva tarea -->
+            <form class="task-form" id="task-form" autocomplete="off">
+              <label for="task-input" class="sr">Nueva tarea o pendiente</label>
+              <div class="task-input-row">
+                <input id="task-input" type="text" placeholder="Escribe un nuevo pendiente..." maxlength="120" required>
+                <button type="submit" class="btn btn-call" id="btn-add-task">+ Agregar</button>
+              </div>
+            </form>
+
+            <!-- Barra de progreso y contador -->
+            <div class="task-summary-row">
+              <span id="task-counter" class="task-counter">0 de 0 completadas</span>
+              <span id="task-percent" class="task-percent">0%</span>
+            </div>
+            <div class="progress" aria-hidden="true">
+              <div id="progress-bar"></div>
+            </div>
+
+            <!-- Filtros de lista (Todas, Pendientes, Completadas) -->
+            <div class="task-filters-row">
+              <div class="task-filters">
+                <button type="button" class="task-filter-btn active" data-filter="all">Todas (<span id="count-all">0</span>)</button>
+                <button type="button" class="task-filter-btn" data-filter="pending">Pendientes (<span id="count-pending">0</span>)</button>
+                <button type="button" class="task-filter-btn" data-filter="completed">Completadas (<span id="count-completed">0</span>)</button>
+              </div>
+              <div class="task-actions-menu">
+                <button type="button" class="btn-text-subtle" id="btn-reset-tasks" title="Restablecer sugerencias de FIME">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+                  Restablecer
+                </button>
+                <button type="button" class="btn-text-subtle danger" id="btn-clear-tasks" title="Borrar toda la lista">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                  Limpiar
+                </button>
+              </div>
+            </div>
+
+            <!-- Lista de tareas interactiva -->
+            <ul class="task-list" id="checklist"></ul>
+            <p class="muted task-empty-msg" id="task-empty" hidden>No hay tareas en esta categoría. ¡Agrega una nueva arriba o restablece los pendientes sugeridos!</p>
+          </article>
+        </div>
       </div>
-      <p class="muted">Fechas aprobadas por la Comisión Académica de FIME UANL. Filtra por mes:</p>
-      
-      <!-- Filtros por mes para móvil -->
-      <nav class="month-tabs" aria-label="Filtro de fechas por mes">
-        <button type="button" class="month-tab-btn active" data-mes="todos">Todos</button>
-        <button type="button" class="month-tab-btn" data-mes="8">Agosto</button>
-        <button type="button" class="month-tab-btn" data-mes="9">Septiembre</button>
-        <button type="button" class="month-tab-btn" data-mes="10">Octubre</button>
-        <button type="button" class="month-tab-btn" data-mes="11">Noviembre</button>
-        <button type="button" class="month-tab-btn" data-mes="12">Diciembre</button>
-      </nav>
-
-      <ul class="dates" id="fechas"></ul>
-
-      <!-- LISTA DE PENDIENTES / TAREAS PERSONALIZABLE -->
-      <div class="section-header-row" style="margin-top: 1.8rem;">
-        <h2>Tu Lista de Tareas y Pendientes</h2>
-      </div>
-      <p class="muted">Personaliza tu propia lista: agrega, edita o elimina tareas según tu semestre. Todo se guarda en tu teléfono.</p>
-
-      <!-- Panel de control de la lista -->
-      <article class="card task-manager-card">
-        <!-- Formulario para agregar nueva tarea -->
-        <form class="task-form" id="task-form" autocomplete="off">
-          <label for="task-input" class="sr">Nueva tarea o pendiente</label>
-          <div class="task-input-row">
-            <input id="task-input" type="text" placeholder="Escribe un nuevo pendiente..." maxlength="120" required>
-            <button type="submit" class="btn btn-call" id="btn-add-task">+ Agregar</button>
-          </div>
-        </form>
-
-        <!-- Barra de progreso y contador -->
-        <div class="task-summary-row">
-          <span id="task-counter" class="task-counter">0 de 0 completadas</span>
-          <span id="task-percent" class="task-percent">0%</span>
-        </div>
-        <div class="progress" aria-hidden="true">
-          <div id="progress-bar"></div>
-        </div>
-
-        <!-- Filtros de lista (Todas, Pendientes, Completadas) -->
-        <div class="task-filters-row">
-          <div class="task-filters">
-            <button type="button" class="task-filter-btn active" data-filter="all">Todas (<span id="count-all">0</span>)</button>
-            <button type="button" class="task-filter-btn" data-filter="pending">Pendientes (<span id="count-pending">0</span>)</button>
-            <button type="button" class="task-filter-btn" data-filter="completed">Completadas (<span id="count-completed">0</span>)</button>
-          </div>
-          <div class="task-actions-menu">
-            <button type="button" class="btn-text-subtle" id="btn-reset-tasks" title="Restablecer sugerencias de FIME">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
-              Restablecer
-            </button>
-            <button type="button" class="btn-text-subtle danger" id="btn-clear-tasks" title="Borrar toda la lista">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-              Limpiar
-            </button>
-          </div>
-        </div>
-
-        <!-- Lista de tareas interactiva -->
-        <ul class="task-list" id="checklist"></ul>
-        <p class="muted task-empty-msg" id="task-empty" hidden>No hay tareas en esta categoría. ¡Agrega una nueva arriba o restablece los pendientes sugeridos!</p>
-      </article>
     </section>
 
     <!-- VISTA 2: MAPA Y NOMENCLATURA -->
@@ -159,58 +166,64 @@
       <h1 id="t-mapa">Mapa de la Facultad</h1>
       <p class="muted">Toca cualquier edificio para ver detalles o usa los botones para acercar/alejar.</p>
 
-      <div class="map-tools">
-        <button type="button" id="zoom-out" aria-label="Alejar mapa">−</button>
-        <button type="button" id="zoom-in" aria-label="Acercar mapa">+</button>
-        <button type="button" id="zoom-reset" aria-label="Restablecer vista inicial">⟲</button>
+      <div class="desktop-split-layout">
+        <div class="desktop-col-main">
+          <div class="map-tools">
+            <button type="button" id="zoom-out" aria-label="Alejar mapa">−</button>
+            <button type="button" id="zoom-in" aria-label="Acercar mapa">+</button>
+            <button type="button" id="zoom-reset" aria-label="Restablecer vista inicial">⟲</button>
+          </div>
+
+          <div class="map-wrap" id="map-wrap" tabindex="0" aria-label="Mapa interactivo de FIME. Desliza con el dedo para recorrerlo."></div>
+
+          <!-- Ficha de información del lugar seleccionado -->
+          <article class="card place-info" id="place-info" aria-live="polite">
+            <p class="muted">Toca un edificio en el plano o selecciónalo en la lista para conocer su ubicación y servicios.</p>
+          </article>
+        </div>
+
+        <div class="desktop-col-side">
+          <!-- EXPLICACIÓN Y DECODIFICADOR DE NOMENCLATURA -->
+          <h2>Cómo leer la nomenclatura de salones</h2>
+          <article class="card nomenclatura">
+            <p>Los salones suelen tener un código de <b>4 dígitos</b>:</p>
+            <ol class="digits" aria-label="Significado de cada dígito del salón">
+              <li>
+                <span class="dg d1">1.º</span>
+                <small><b>Edificio</b></small>
+              </li>
+              <li>
+                <span class="dg d2">2.º</span>
+                <small><b>Piso</b></small>
+              </li>
+              <li>
+                <span class="dg d3">3.º y 4.º</span>
+                <small><b>Número de aula</b> en ese piso</small>
+              </li>
+            </ol>
+
+            <p class="ejemplo">
+              <b>Ejemplo:</b> <code>2103</code> → <b>Edificio 2</b>, <b>Piso 1</b>, <b>Salón 03</b>.
+            </p>
+            <p class="muted">Muchas puertas repiten este código en el exterior. <i>Ojo:</i> algunos salones y laboratorios tienen numeraciones especiales.</p>
+
+            <!-- Probador interactivo -->
+            <form class="decoder" id="salon-form" autocomplete="off">
+              <label for="salon-input"><b>Pruébalo con el número de tu salón:</b></label>
+              <input id="salon-input" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Ej. 2103" aria-describedby="salon-resultado">
+              <p id="salon-resultado" class="muted" aria-live="polite">Escribe los 4 dígitos (ejemplo: 2103).</p>
+              <button type="button" class="btn ghost" id="salon-ver" hidden>Ver edificio en el mapa</button>
+            </form>
+          </article>
+
+          <h2>Directorio de Edificios y Lugares</h2>
+          <label class="search">
+            <span class="sr">Buscar lugar</span>
+            <input type="search" id="buscar-lugar" placeholder="Buscar edificio, laboratorio o servicio…" autocomplete="off" enterkeyhint="search">
+          </label>
+          <ul class="place-list" id="place-list"></ul>
+        </div>
       </div>
-
-      <div class="map-wrap" id="map-wrap" tabindex="0" aria-label="Mapa interactivo de FIME. Desliza con el dedo para recorrerlo."></div>
-
-      <!-- Ficha de información del lugar seleccionado -->
-      <article class="card place-info" id="place-info" aria-live="polite">
-        <p class="muted">Toca un edificio en el plano o selecciónalo en la lista inferior para conocer su ubicación y servicios.</p>
-      </article>
-
-      <!-- EXPLICACIÓN Y DECODIFICADOR DE NOMENCLATURA -->
-      <h2>Cómo leer la nomenclatura de salones</h2>
-      <article class="card nomenclatura">
-        <p>Los salones suelen tener un código de <b>4 dígitos</b>:</p>
-        <ol class="digits" aria-label="Significado de cada dígito del salón">
-          <li>
-            <span class="dg d1">1.º</span>
-            <small><b>Edificio</b></small>
-          </li>
-          <li>
-            <span class="dg d2">2.º</span>
-            <small><b>Piso</b></small>
-          </li>
-          <li>
-            <span class="dg d3">3.º y 4.º</span>
-            <small><b>Número de aula</b> en ese piso</small>
-          </li>
-        </ol>
-
-        <p class="ejemplo">
-          <b>Ejemplo:</b> <code>2103</code> → <b>Edificio 2</b>, <b>Piso 1</b>, <b>Salón 03</b>.
-        </p>
-        <p class="muted">Muchas puertas repiten este código en el exterior. <i>Ojo:</i> algunos salones y laboratorios tienen numeraciones especiales.</p>
-
-        <!-- Probador interactivo -->
-        <form class="decoder" id="salon-form" autocomplete="off">
-          <label for="salon-input"><b>Pruébalo con el número de tu salón:</b></label>
-          <input id="salon-input" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Ej. 2103" aria-describedby="salon-resultado">
-          <p id="salon-resultado" class="muted" aria-live="polite">Escribe los 4 dígitos (ejemplo: 2103).</p>
-          <button type="button" class="btn ghost" id="salon-ver" hidden>Ver edificio en el mapa</button>
-        </form>
-      </article>
-
-      <h2>Directorio de Edificios y Lugares</h2>
-      <label class="search">
-        <span class="sr">Buscar lugar</span>
-        <input type="search" id="buscar-lugar" placeholder="Buscar edificio, laboratorio o servicio…" autocomplete="off" enterkeyhint="search">
-      </label>
-      <ul class="place-list" id="place-list"></ul>
     </section>
 
     <!-- VISTA 3: CONTACTOS Y DIRECTORIO -->

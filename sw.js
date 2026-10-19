@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fime-guia-v6';
+const CACHE_NAME = 'fime-guia-v7';
 const RECURSOS = [
   './',
   'index.html',
