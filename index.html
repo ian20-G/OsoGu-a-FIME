@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f7a3d">
+  <meta name="description" content="Guía Integral de Gestión Académica y Procedimental en FIME UANL: mapa, salones, contactos, AFIs, becas, servicio social, prácticas y titulación.">
+  <title>FIME UANL · Guía Estudiantil</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- BARRA SUPERIOR -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="icon.svg" alt="Escudo FIME" width="36" height="36">
+      <div>
+        <strong id="facultad-nombre">FIME</strong>
+        <small>Guía Estudiantil UANL</small>
+      </div>
+    </div>
+    <a class="topbar-info" id="conmutador-top" href="tel:8183294020" aria-label="Llamar al conmutador central de FIME">
+      <svg class="ui-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (81) 8329-4020
+    </a>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido" tabindex="-1">
+    <noscript>
+      <p class="card">Por favor, activa JavaScript en tu navegador para interactuar con la guía de FIME.</p>
+    </noscript>
+
+    <!-- VISTA 1: INICIO -->
+    <section id="view-inicio" class="view" aria-labelledby="t-inicio">
+      <h1 id="t-inicio">¡Bienvenido a FIME! 🐻💚</h1>
+      <p class="lead" id="bienvenida"></p>
+
+      <!-- Horarios de atención rápida -->
+      <div class="notice-box">
+        <div class="notice-box-title">
+          <svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <strong>Horarios oficiales de atención en FIME:</strong>
+        </div>
+        <ul>
+          <li><b>Ventanillas administrativas:</b> <span id="horario-ventanillas">Lunes a viernes 8:00 a 20:00 h</span></li>
+          <li><b>Cajas de la Facultad:</b> <span id="horario-cajas">Lunes a viernes 8:00 a 19:30 h</span></li>
+          <li><b>Conmutador general:</b> <span id="conmutador-info">(81) 8329-4020</span></li>
+        </ul>
+      </div>
+
+      <!-- Accesos directos a secciones clave -->
+      <div class="quick">
+        <a class="card quick-item" href="#mapa">
+          <div class="quick-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+          </div>
+          <b>Mapa y Salones</b>
+          <small>Ubicación y decodificador de aulas</small>
+        </a>
+        <a class="card quick-item" href="#contactos">
+          <div class="quick-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+          </div>
+          <b>Directorio</b>
+          <small>Extensiones, correos y Teams</small>
+        </a>
+        <a class="card quick-item" href="#guia">
+          <div class="quick-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          </div>
+          <b>Trámites y Guías</b>
+          <small>AFIs, becas, servicio y titulación</small>
+        </a>
+        <a class="card quick-item" id="btn-llegar" href="#" target="_blank" rel="noopener noreferrer">
+          <div class="quick-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <b>Cómo llegar</b>
+          <small id="direccion">Abrir en Google Maps</small>
+        </a>
+      </div>
+
+      <div class="section-header-row">
+        <h2>Calendario Oficial FIME (Ago - Dic 2026)</h2>
+      </div>
+      <p class="muted">Fechas aprobadas por la Comisión Académica de FIME UANL. Filtra por mes:</p>
+      
+      <!-- Filtros por mes para móvil -->
+      <nav class="month-tabs" aria-label="Filtro de fechas por mes">
+        <button type="button" class="month-tab-btn active" data-mes="todos">Todos</button>
+        <button type="button" class="month-tab-btn" data-mes="8">Agosto</button>
+        <button type="button" class="month-tab-btn" data-mes="9">Septiembre</button>
+        <button type="button" class="month-tab-btn" data-mes="10">Octubre</button>
+        <button type="button" class="month-tab-btn" data-mes="11">Noviembre</button>
+        <button type="button" class="month-tab-btn" data-mes="12">Diciembre</button>
+      </nav>
+
+      <ul class="dates" id="fechas"></ul>
+
+      <!-- LISTA DE PENDIENTES / TAREAS PERSONALIZABLE -->
+      <div class="section-header-row" style="margin-top: 1.8rem;">
+        <h2>Tu Lista de Tareas y Pendientes</h2>
+      </div>
+      <p class="muted">Personaliza tu propia lista: agrega, edita o elimina tareas según tu semestre. Todo se guarda en tu teléfono.</p>
+
+      <!-- Panel de control de la lista -->
+      <article class="card task-manager-card">
+        <!-- Formulario para agregar nueva tarea -->
+        <form class="task-form" id="task-form" autocomplete="off">
+          <label for="task-input" class="sr">Nueva tarea o pendiente</label>
+          <div class="task-input-row">
+            <input id="task-input" type="text" placeholder="Escribe un nuevo pendiente..." maxlength="120" required>
+            <button type="submit" class="btn btn-call" id="btn-add-task">+ Agregar</button>
+          </div>
+        </form>
+
+        <!-- Barra de progreso y contador -->
+        <div class="task-summary-row">
+          <span id="task-counter" class="task-counter">0 de 0 completadas</span>
+          <span id="task-percent" class="task-percent">0%</span>
+        </div>
+        <div class="progress" aria-hidden="true">
+          <div id="progress-bar"></div>
+        </div>
+
+        <!-- Filtros de lista (Todas, Pendientes, Completadas) -->
+        <div class="task-filters-row">
+          <div class="task-filters">
+            <button type="button" class="task-filter-btn active" data-filter="all">Todas (<span id="count-all">0</span>)</button>
+            <button type="button" class="task-filter-btn" data-filter="pending">Pendientes (<span id="count-pending">0</span>)</button>
+            <button type="button" class="task-filter-btn" data-filter="completed">Completadas (<span id="count-completed">0</span>)</button>
+          </div>
+          <div class="task-actions-menu">
+            <button type="button" class="btn-text-subtle" id="btn-reset-tasks" title="Restablecer sugerencias de FIME">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+              Restablecer
+            </button>
+            <button type="button" class="btn-text-subtle danger" id="btn-clear-tasks" title="Borrar toda la lista">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+              Limpiar
+            </button>
+          </div>
+        </div>
+
+        <!-- Lista de tareas interactiva -->
+        <ul class="task-list" id="checklist"></ul>
+        <p class="muted task-empty-msg" id="task-empty" hidden>No hay tareas en esta categoría. ¡Agrega una nueva arriba o restablece los pendientes sugeridos!</p>
+      </article>
+    </section>
+
+    <!-- VISTA 2: MAPA Y NOMENCLATURA -->
+    <section id="view-mapa" class="view" hidden aria-labelledby="t-mapa">
+      <h1 id="t-mapa">Mapa de la Facultad</h1>
+      <p class="muted">Toca cualquier edificio para ver detalles o usa los botones para acercar/alejar.</p>
+
+      <div class="map-tools">
+        <button type="button" id="zoom-out" aria-label="Alejar mapa">−</button>
+        <button type="button" id="zoom-in" aria-label="Acercar mapa">+</button>
+        <button type="button" id="zoom-reset" aria-label="Restablecer vista inicial">⟲</button>
+      </div>
+
+      <div class="map-wrap" id="map-wrap" tabindex="0" aria-label="Mapa interactivo de FIME. Desliza con el dedo para recorrerlo."></div>
+
+      <!-- Ficha de información del lugar seleccionado -->
+      <article class="card place-info" id="place-info" aria-live="polite">
+        <p class="muted">Toca un edificio en el plano o selecciónalo en la lista inferior para conocer su ubicación y servicios.</p>
+      </article>
+
+      <!-- EXPLICACIÓN Y DECODIFICADOR DE NOMENCLATURA -->
+      <h2>Cómo leer la nomenclatura de salones</h2>
+      <article class="card nomenclatura">
+        <p>Los salones suelen tener un código de <b>4 dígitos</b>:</p>
+        <ol class="digits" aria-label="Significado de cada dígito del salón">
+          <li>
+            <span class="dg d1">1.º</span>
+            <small><b>Edificio</b></small>
+          </li>
+          <li>
+            <span class="dg d2">2.º</span>
+            <small><b>Piso</b></small>
+          </li>
+          <li>
+            <span class="dg d3">3.º y 4.º</span>
+            <small><b>Número de aula</b> en ese piso</small>
+          </li>
+        </ol>
+
+        <p class="ejemplo">
+          <b>Ejemplo:</b> <code>2103</code> → <b>Edificio 2</b>, <b>Piso 1</b>, <b>Salón 03</b>.
+        </p>
+        <p class="muted">Muchas puertas repiten este código en el exterior. <i>Ojo:</i> algunos salones y laboratorios tienen numeraciones especiales.</p>
+
+        <!-- Probador interactivo -->
+        <form class="decoder" id="salon-form" autocomplete="off">
+          <label for="salon-input"><b>Pruébalo con el número de tu salón:</b></label>
+          <input id="salon-input" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Ej. 2103" aria-describedby="salon-resultado">
+          <p id="salon-resultado" class="muted" aria-live="polite">Escribe los 4 dígitos (ejemplo: 2103).</p>
+          <button type="button" class="btn ghost" id="salon-ver" hidden>Ver edificio en el mapa</button>
+        </form>
+      </article>
+
+      <h2>Directorio de Edificios y Lugares</h2>
+      <label class="search">
+        <span class="sr">Buscar lugar</span>
+        <input type="search" id="buscar-lugar" placeholder="Buscar edificio, laboratorio o servicio…" autocomplete="off" enterkeyhint="search">
+      </label>
+      <ul class="place-list" id="place-list"></ul>
+    </section>
+
+    <!-- VISTA 3: CONTACTOS Y DIRECTORIO -->
+    <section id="view-contactos" class="view" hidden aria-labelledby="t-contactos">
+      <h1 id="t-contactos">Directorio Institucional FIME</h1>
+      <p class="muted">Atención presencial en ventanillas, conmutador central, correos oficiales y canales de Microsoft Teams.</p>
+
+      <label class="search">
+        <span class="sr">Buscar contacto</span>
+        <input type="search" id="buscar-contacto" placeholder="Buscar por departamento, persona, trámite o Teams…" autocomplete="off" enterkeyhint="search">
+      </label>
+
+      <div id="contactos-lista"></div>
+      <p class="muted card" id="contactos-vacio" hidden>No se encontraron contactos que coincidan con la búsqueda.</p>
+    </section>
+
+    <!-- VISTA 4: GUÍAS Y TRÁMITES ACADÉMICOS -->
+    <section id="view-guia" class="view" hidden aria-labelledby="t-guia">
+      <h1 id="t-guia">Guía Integral de Trámites</h1>
+      <p class="muted">Requisitos claros y procedimientos oficiales de FIME explicados paso a paso.</p>
+
+      <!-- Filtros por categoría -->
+      <nav class="guide-tabs" aria-label="Categorías de trámites">
+        <button type="button" class="guide-tab-btn active" data-cat="todas">Todos</button>
+        <button type="button" class="guide-tab-btn" data-cat="planificacion">Ruta Semestral</button>
+        <button type="button" class="guide-tab-btn" data-cat="apoyos">Becas y Pagos</button>
+        <button type="button" class="guide-tab-btn" data-cat="tramites">Prácticas y Servicio</button>
+        <button type="button" class="guide-tab-btn" data-cat="titulacion">Titulación</button>
+      </nav>
+
+      <!-- Acordeones de guías detalladas -->
+      <div id="guias-lista"></div>
+
+      <h2>Preguntas Frecuentes (FAQ)</h2>
+      <div id="faq"></div>
+
+      <h2>Portales y Enlaces Oficiales</h2>
+      <ul class="links" id="enlaces"></ul>
+    </section>
+  </main>
+
+  <!-- BARRA DE NAVEGACIÓN INFERIOR (TABBAR) -->
+  <nav class="tabbar" aria-label="Navegación principal de la aplicación">
+    <a href="#inicio" data-tab="inicio">
+      <span class="tabbar-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </span>
+      Inicio
+    </a>
+    <a href="#mapa" data-tab="mapa">
+      <span class="tabbar-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+      </span>
+      Mapa
+    </a>
+    <a href="#contactos" data-tab="contactos">
+      <span class="tabbar-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+      </span>
+      Contactos
+    </a>
+    <a href="#guia" data-tab="guia">
+      <span class="tabbar-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+      </span>
+      Guía
+    </a>
+  </nav>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
