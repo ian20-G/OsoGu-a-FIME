@@ -504,6 +504,62 @@ main {
   padding: .15rem .4rem; border-radius: 5px; font-size: .95rem; font-weight: 700; color: var(--primary);
 }
 
+/* Banner de descargo no oficial */
+.disclaimer-banner {
+  font-size: .78rem; text-align: center; color: var(--muted);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  border: 1px dashed var(--line-strong); border-radius: 8px;
+  padding: .45rem .8rem; margin: .6rem 0 1rem;
+}
+
+/* Caja de tips destacados para estudiantes */
+.callout-tip {
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+  border-left: 4px solid var(--primary);
+  border-radius: 8px; padding: .8rem 1rem; margin: .8rem 0;
+  font-size: .92rem;
+}
+.callout-tip h5 {
+  margin: 0 0 .3rem; font-size: .96rem; color: var(--primary);
+  display: flex; align-items: center; gap: .4rem;
+}
+.callout-tip p { margin: .25rem 0; color: var(--ink); }
+
+/* Bloques de horario oficiales (M, V, N) */
+.schedule-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: .75rem; margin: .9rem 0;
+}
+.schedule-card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 12px; padding: .85rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+.schedule-card h5 {
+  margin: 0; font-size: .98rem; color: var(--primary); font-weight: 800;
+}
+.schedule-card .sub {
+  margin: .15rem 0 .6rem; font-size: .8rem; color: var(--muted);
+}
+.schedule-table {
+  width: 100%; border-collapse: collapse; font-size: .86rem;
+}
+.schedule-table tr {
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+.schedule-table tr:last-child { border-bottom: none; }
+.schedule-table td { padding: .38rem 0; }
+.schedule-table .code {
+  font-weight: 800; color: var(--primary); width: 44px;
+}
+.schedule-table .time {
+  text-align: right; color: var(--ink); font-variant-numeric: tabular-nums;
+}
+.schedule-note {
+  font-size: .84rem; color: var(--muted); margin: .6rem 0 .2rem;
+  line-height: 1.4;
+}
+
 .step-list { margin: .5rem 0; padding-left: 1.3rem; }
 .step-list li { margin-bottom: .5rem; }
 

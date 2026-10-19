@@ -405,6 +405,14 @@ const FACULTAD = {
           lugar: "Ventanillas de Servicios Escolares Licenciatura"
         },
         {
+          nombre: "Reprogramación de Horarios y Apertura de Grupos",
+          titular: "Atención Telefónica Directa de Escolar",
+          detalle: "El mejor número para llamar si necesitas reprogramar tu horario o solicitar apertura de cupos/contenedores de materias. Es el que más suele contestar.",
+          tels: ["(81) 1340-4423"],
+          horario: "Lunes a viernes 8:00 a 20:00 h (Regularmente contestan, aunque puede tardar la línea por saturación)",
+          lugar: "Ventanillas de Servicios Escolares"
+        },
+        {
           nombre: "Subdirección Académica",
           titular: "Dirección de Licenciatura",
           detalle: "Resolución de situaciones académicas, planes de estudio y comités",
@@ -527,6 +535,196 @@ const FACULTAD = {
    * GUÍA PASO A PASO (PROCEDIMIENTOS ACADÉMICOS ESENCIALES)
    */
   guias: [
+    {
+      id: "horarios-bloques",
+      categoria: "horarios",
+      icono: "",
+      titulo: "Horarios, Bloques de Clase y Selección en SIASE",
+      resumen: "Paquetes de 1.º semestre, reglas oficiales en SIASE para armar horario, bloques de horas M, V y N, y el consejo clave para reprogramar.",
+      contenidoHtml: `
+        <div class="doc-block">
+          <h4>Cómo se arma el horario en FIME</h4>
+          <p><b>En 1.º semestre (nuevo ingreso):</b> El horario suele armarse como un <b>paquete cerrado</b>. Eliges entre paquetes con materias y docentes ya definidos que se publican en la página oficial de FIME. Desde fuera no siempre es visible quién imparte cada materia hasta que estés formalmente dado de alta.</p>
+          <p><b>Consejo de comunidad:</b> En grupos estudiantiles y asociaciones suelen circular PDFs o guías del semestre. Cuando ya tengas tus materias y maestros asignados, puedes consultar reseñas y opiniones de otros alumnos en <a href="https://www.notechifles.app" target="_blank" rel="noopener noreferrer"><b>NoTeChifles</b></a> para comparar experiencias.</p>
+
+          <div class="callout-tip">
+            <h5>Reglas oficiales para armar horario en SIASE (Desde 2.º semestre)</h5>
+            <ol class="step-list">
+              <li><b>Primero materias atrasadas:</b> Es obligatorio inscribir primero las materias que adeudes (las reprobadas o no cursadas).</li>
+              <li><b>Para adelantar materias:</b> Para meter materias de semestres posteriores, primero debes tener inscritas todas las materias correspondientes a tu semestre actual.</li>
+              <li><b>Para retirar o cambiar:</b> Para dar de baja una materia atrasada o del semestre actual, debes eliminar primero las materias del semestre más alto (ejemplo: si estás en 5.º y metiste una de 6.º, para quitar la de 5.º primero debes borrar la de 6.º).</li>
+            </ol>
+          </div>
+
+          <div class="callout-tip">
+            <h5>Consejo de Contenedores y Reprogramación de Horario</h5>
+            <p>Hay ocasiones en las que al inicio no se activan todos los grupos o contenedores, pero la facultad abre más grupos y fechas después. Si tu horario no quedó como deseabas, te conviene esperarte a las fechas de reprogramación, ya que es probable que se liberen nuevos cupos (aunque no es 100% garantizado).</p>
+            <p><b>El mejor número para llamar a Escolar y pedir reprogramación de horario:</b> <a href="tel:8113404423" class="code-pill"><b>(81) 1340-4423</b></a>. Es el teléfono de Servicios Escolares que más contesta de forma regular (sé paciente si la línea tarda en entrar por saturación).</p>
+          </div>
+
+          <h4>Bloques de Hora Oficiales en FIME</h4>
+          <p>En los horarios oficiales de la facultad y en plataformas estudiantiles se utilizan las mismas siglas. En el patrón habitual de lunes, miércoles y viernes (LMV):</p>
+          <ul>
+            <li><b>Turno Mañana (M) y Vespertino (V):</b> Bloques de <b>50 minutos</b> de clase.</li>
+            <li><b>Turno Noche (N):</b> Bloques de <b>45 minutos</b> (no 50).</li>
+          </ul>
+
+          <div class="schedule-grid">
+            <!-- Mañana -->
+            <div class="schedule-card">
+              <h5>Mañana (M)</h5>
+              <div class="sub">50 min por bloque</div>
+              <table class="schedule-table">
+                <tbody>
+                  <tr><td class="code">M1</td><td class="time">7:00 – 7:50 a.m.</td></tr>
+                  <tr><td class="code">M2</td><td class="time">7:50 – 8:40 a.m.</td></tr>
+                  <tr><td class="code">M3</td><td class="time">8:40 – 9:30 a.m.</td></tr>
+                  <tr><td class="code">M4</td><td class="time">9:30 – 10:20 a.m.</td></tr>
+                  <tr><td class="code">M5</td><td class="time">10:20 – 11:10 a.m.</td></tr>
+                  <tr><td class="code">M6</td><td class="time">11:10 – 12:00 p.m.</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Vespertino -->
+            <div class="schedule-card">
+              <h5>Vespertino (V)</h5>
+              <div class="sub">50 min por bloque</div>
+              <table class="schedule-table">
+                <tbody>
+                  <tr><td class="code">V1</td><td class="time">12:00 – 12:50 p.m.</td></tr>
+                  <tr><td class="code">V2</td><td class="time">12:50 – 1:40 p.m.</td></tr>
+                  <tr><td class="code">V3</td><td class="time">1:40 – 2:30 p.m.</td></tr>
+                  <tr><td class="code">V4</td><td class="time">2:30 – 3:20 p.m.</td></tr>
+                  <tr><td class="code">V5</td><td class="time">3:20 – 4:10 p.m.</td></tr>
+                  <tr><td class="code">V6</td><td class="time">4:10 – 5:00 p.m.</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Noche -->
+            <div class="schedule-card">
+              <h5>Noche (N)</h5>
+              <div class="sub">45 min por bloque</div>
+              <table class="schedule-table">
+                <tbody>
+                  <tr><td class="code">N1</td><td class="time">5:00 – 5:45 p.m.</td></tr>
+                  <tr><td class="code">N2</td><td class="time">5:45 – 6:30 p.m.</td></tr>
+                  <tr><td class="code">N3</td><td class="time">6:30 – 7:15 p.m.</td></tr>
+                  <tr><td class="code">N4</td><td class="time">7:15 – 8:00 p.m.</td></tr>
+                  <tr><td class="code">N5</td><td class="time">8:00 – 8:45 p.m.</td></tr>
+                  <tr><td class="code">N6</td><td class="time">8:45 – 9:30 p.m.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="schedule-note"><b>Nota importante:</b> Los días martes/jueves y cursos sabatinos suelen agrupar bloques de 3 horas continuas (por ejemplo: M1–M3 de 7:00 a 9:30 a.m.). En tu horario y en SIASE se especifica si la materia corresponde a aula teórica, laboratorio presencial o modalidad en línea.</p>
+        </div>
+      `
+    },
+    {
+      id: "oportunidades-pagos",
+      categoria: "oportunidades",
+      icono: "",
+      titulo: "2.ª Oportunidad, Sabatinos, 3.ª y Pagos",
+      resumen: "Resumen práctico de cobros y modalidades académicas (2.ª, sabatinos, regularización, 3.ª entre semana y exámenes especiales).",
+      contenidoHtml: `
+        <div class="doc-block">
+          <h4>Resumen práctico de cobros y modalidades</h4>
+          <p class="muted">Recuerda siempre confirmar montos exactos y fechas límite en ventanillas de Servicios Escolares y Cajas de la Facultad.</p>
+
+          <div class="timeline">
+            <div class="time-step">
+              <span class="step-badge">2.ª Oportunidad</span>
+              <h4>Cobro diferido al siguiente semestre</h4>
+              <p>El pago de examen de 2.ª oportunidad <b>no se realiza en el acto</b>. El importe se refleja automáticamente en tu boleta de cuota interna de FIME al inscribirte al siguiente semestre.</p>
+            </div>
+
+            <div class="time-step">
+              <span class="step-badge">Cursos Sabatinos</span>
+              <h4>Asesorías de 3.ª oportunidad</h4>
+              <p>El curso sabatino debe pagarse a más tardar <b>1 o 2 semanas después de que comiencen las clases</b>. Ten en cuenta que el costo del curso sabatino y el derecho a examen de 3.ª oportunidad son <b>dos cobros independientes</b>.</p>
+            </div>
+
+            <div class="time-step">
+              <span class="step-badge">Regularización</span>
+              <h4>Sin pagar curso sabatino</h4>
+              <p>Si decides no inscribir o no pagar el curso sabatino, la facultad te asigna en modalidad de <b>Regularización</b>: no llevas clases los sábados y únicamente presentas el examen en la fecha programada con un docente asignado de forma aleatoria.</p>
+            </div>
+
+            <div class="time-step">
+              <span class="step-badge">3.ª Entre Semana</span>
+              <h4>Sin costo adicional de sabatino</h4>
+              <p>Si recursas la materia en horario regular de lunes a viernes (entre semana), <b>no te cobran el curso sabatino</b>; únicamente cubre los derechos y cuotas ordinarias de esa modalidad.</p>
+            </div>
+
+            <div class="time-step">
+              <span class="step-badge">Exámenes Especiales</span>
+              <h4>Tercera especial y Quinta especial</h4>
+              <p>Son oportunidades extraordinarias creadas como un intento adicional dentro de la misma oportunidad (3.ª o 5.ª) para brindarte la posibilidad de acreditar la materia antes de agotar tus oportunidades definitivas.</p>
+            </div>
+          </div>
+        </div>
+      `
+    },
+    {
+      id: "asociaciones-afis",
+      categoria: "asociaciones",
+      icono: "",
+      titulo: "Asociaciones Estudiantiles, Beneficios y AFIs",
+      resumen: "Comunidades por carrera, grupos de WhatsApp con tips, vales de comida, beca de rectoría y la cotizada beca de horario.",
+      contenidoHtml: `
+        <div class="doc-block">
+          <h4>¿Por qué unirte a una asociación estudiantil en FIME?</h4>
+          <p>Existen grupos y mesas directivas para cada carrera e interés técnico en la facultad. Puedes consultar el listado completo y enlaces de registro en el <a href="https://www.notechifles.app/asociaciones" target="_blank" rel="noopener noreferrer"><b>Directorio de Asociaciones FIME</b></a>.</p>
+          <p>Vale la pena integrarte a la asociación de tu carrera: suelen contar con grupos de WhatsApp donde comparten avisos oportunos, eventos, oportunidades de becas, exámenes pasados y recomendaciones de profesores de semestres anteriores.</p>
+
+          <div class="callout-tip">
+            <h5>Beneficios reales por participación activa</h5>
+            <ul>
+              <li><b>Beca de Horario:</b> Uno de los beneficios más valiosos para cualquier estudiante. Al colaborar activamente en la asociación o sociedad de alumnos, obtienes prioridad o apoyo institucional para armar tu horario en SIASE en los semestres siguientes.</li>
+              <li><b>Beca de Rectoría:</b> Oportunidad de postulación y respaldo para trámites de becas institucionales.</li>
+              <li><b>Vales de Comida:</b> Apoyos alimenticios dentro de la cafetería de la facultad.</li>
+              <li><b>Networking y proyectos:</b> Contacto directo con egresados, empresas y talleres especializados.</li>
+            </ul>
+          </div>
+
+          <h4>Alerta sobre Actividades de Formación Integral (AFIs)</h4>
+          <p>Las asociaciones suelen ser organizadoras y promotoras de conferencias y talleres válidos para AFIs:</p>
+          <ul>
+            <li>Las <b>AFIs</b> son actividades formativas obligatorias para tramitar tu titulación.</li>
+            <li>Se recomienda llevar y validar al menos <b>10 a 16 AFIs</b> a lo largo de tu carrera sin dejarlas para el final.</li>
+            <li><b>Ojo:</b> Si terminas tus materias y no completaste tus AFIs reglamentarias, la universidad puede cobrarte el costo equivalente a las que te hayan faltado para poder liberar tu certificado.</li>
+          </ul>
+        </div>
+      `
+    },
+    {
+      id: "impresiones-campus",
+      categoria: "campus",
+      icono: "",
+      titulo: "Dónde Imprimir en FIME (Papelería y Biblioteca)",
+      resumen: "Lugares habilitados dentro de la facultad para imprimir planos, reportes, tareas y apuntes.",
+      contenidoHtml: `
+        <div class="doc-block">
+          <h4>Puntos oficiales de impresión dentro del campus</h4>
+          <div class="timeline">
+            <div class="time-step">
+              <span class="step-badge">Papelería FIME</span>
+              <h4>Edificio Principal de Servicios</h4>
+              <p>Es la opción habitual dentro de la facultad. Cuenta con servicio de fotocopiado, impresión digital desde memoria USB o correo, encuadernación, papelería escolar básica y planos técnicos.</p>
+            </div>
+
+            <div class="time-step">
+              <span class="step-badge">Biblioteca FIME (Piso 2)</span>
+              <h4>Centro de Cómputo e Impresiones</h4>
+              <p>En el segundo piso de la Biblioteca de la facultad dispones de computadoras y servicio de impresión para estudiantes.</p>
+              <p><b>Requisito indispensable:</b> Para hacer uso del equipo y solicitar impresiones es obligatorio presentar tu <b>credencial física de estudiante de la UANL</b> o mostrar tu <b>credencial digital activa</b> desde la app oficial de SIASE en tu teléfono móvil.</p>
+            </div>
+          </div>
+        </div>
+      `
+    },
     {
       id: "ruta-semestral",
       categoria: "planificacion",
@@ -825,12 +1023,38 @@ const FACULTAD = {
       a: "50 puntos en EXCI UANL, 460 puntos en TOEFL (institucional/internacional) o acreditar al menos 6 niveles de idioma en la Facultad de Filosofía y Letras (FFyL)."
     },
     {
+      q: "¿Cómo funcionan los bloques de hora M, V y N en FIME?",
+      a: "El turno Matutino (M1 a M6 de 7:00 a 12:00) y Vespertino (V1 a V6 de 12:00 a 17:00) tienen bloques de 50 minutos. El turno Nocturno (N1 a N6 de 17:00 a 21:30) tiene bloques de 45 minutos. Los martes/jueves y sabatinos suelen agrupar 3 bloques continuos (ej. M1-M3)."
+    },
+    {
+      q: "¿A qué número llamo para reprogramar mi horario o solicitar cupo en materias?",
+      a: "El número que más contesta de manera regular en Servicios Escolares es (81) 1340-4423. Es recomendable llamar en horario hábil si los contenedores no se activaron o requieres un cambio de grupo."
+    },
+    {
+      q: "¿Qué pasa si no pago el curso sabatino de 3.ª oportunidad?",
+      a: "Si no pagas el curso sabatino, pasas automáticamente a modalidad de Regularización: no asistes a clases los sábados y únicamente presentas el examen en la fecha indicada con un maestro asignado al azar."
+    },
+    {
+      q: "¿Cuándo se paga el examen de 2.ª oportunidad?",
+      a: "No se paga en el acto ni durante el semestre en curso; el cobro se refleja automáticamente en tu boleta de cuota interna de FIME al momento de inscribirte al siguiente semestre."
+    },
+    {
+      q: "¿Dónde puedo imprimir dentro de la facultad?",
+      a: "En la Papelería de FIME (dentro del edificio principal) o en el 2.º piso de la Biblioteca de FIME. Recuerda que en la biblioteca es obligatorio presentar tu credencial física de estudiante o la digital en la app de SIASE."
+    },
+    {
+      q: "¿Qué beneficios tiene unirse a una asociación estudiantil?",
+      a: "Además de pertenecer a grupos de apoyo con material de estudio y tips, puedes acceder a vales de comida, apoyo para beca de rectoría y a la 'beca de horario', que te otorga prioridad o apoyo al armar tu horario en SIASE."
+    },
+    {
       q: "¿Cómo contacto a las coordinaciones si no estoy en la facultad?",
       a: "En la pestaña 'Contactos' tienes el conmutador general (81) 8329-4020, extensiones, correos de los titulares y códigos de Microsoft Teams oficiales para Servicio Social (rg36t3s), Becas (g2c504c) y Subdirección (yy455a5)."
     }
   ],
 
   enlaces: [
+    { texto: "Directorio de Asociaciones Estudiantiles FIME", url: "https://www.notechifles.app/asociaciones" },
+    { texto: "NoTeChifles · Reseñas y Horarios de Maestros FIME", url: "https://www.notechifles.app" },
     { texto: "Sitio Web Oficial de FIME", url: "https://www.fime.uanl.mx" },
     { texto: "Portal SIASE UANL", url: "https://www.uanl.mx/enlinea/" },
     { texto: "Trámites Generales de FIME", url: "https://www.fime.uanl.mx/tramites/tramites-generales/" },
